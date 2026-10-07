@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REST API Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Products</h1>
+    <button id="openModal" onclick="openModalAndReload()">Show Products</button>
+    <ul id="productList"></ul>
+
+<!-- modal Section -->
+<div id="productModal" class="modal">
+    <div class="modalContent">
+
+        <span id="closeModal">&times;</span>
+
+        <h2>Products</h2>
+        <button id="showReports" onclick="reports()">calculates</button><br></br>
+        <ul id="productListed"></ul><br></br>
+        <ul id="reportListed" style="list-style: none; padding: 0;"></ul>
+        <button id="hideReports">Hides</button>
+
+    </div>
+</div>
+
+    <h2>Add Product</h2>
+    <input id="name" placeholder="Product name" required>
+    <input id="price" type="number" placeholder="Price" required>
+    <button onclick="addProduct()">Add</button>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/total.js') }}"></script>
+
+</body>
+</html>
